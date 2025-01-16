@@ -1,0 +1,14 @@
+<template>
+    <!-- create a "unseen" textarea so we can use a legacy browser API to copy to clipboard. -->
+    <template lwc:if={isIconButton}>
+        <lightning-button-icon lwc-ref="clipboardButton" class={_cssClass} size={_iconSize}  icon-name={_iconName} tooltip={_title} 
+        variant={_variant}  onclick={copyToClipboard}> 
+        </lightning-button-icon>
+    </template>
+    <template lwc:else>
+        <lightning-button lwc-ref="clipboardButton" class={_cssClass} stretch={_stretch}  icon-name={_iconName} icon-position={_iconPosition} 
+         title={_title} onclick={copyToClipboard} label={_label} variant={_variant}>            
+        </lightning-button>
+    </template>
+    <textarea lwc:ref="clipboardTextArea" style="position: absolute; left: -6789px; top: -6789px;"></textarea>
+</template>

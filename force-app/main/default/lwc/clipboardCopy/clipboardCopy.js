@@ -8,10 +8,11 @@ export default class ClipboardCopy extends LightningElement {
     //general
     _type = 'icon'; // if not icon, defaults to lightning button
     _iconName = 'utility:copy_to_clipboard';
-    _content = '';
+    _content = 'test content';
     _variant = 'base';
     _cssClass = '';
-    _title = 'Copy To Clipboard'
+    _title = 'Copy To Clipboard';
+    _styleOverride = '';
 
     //lightning-button-icon attributes    
     _iconSize = 'medium';
@@ -24,6 +25,7 @@ export default class ClipboardCopy extends LightningElement {
     //event listener functions
     copyToClipboard() {
        let textArea = this.refs.clipboardTextArea;
+       console.log(textArea.dataset.name);
        textArea.select();
        document.execCommand('copy');
        if (window.getSelection) {
@@ -35,6 +37,15 @@ export default class ClipboardCopy extends LightningElement {
 
     get isIconButton() {
         return this._type === 'icon';
+    }
+
+    @api
+    set styleOverride(value) {
+        this._styleOverride = value;
+    }
+
+    get styleOverride() {
+        return this._styleOverride;
     }
 
 

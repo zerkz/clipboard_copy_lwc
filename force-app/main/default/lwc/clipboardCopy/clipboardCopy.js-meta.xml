@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
-    <isExposed>false</isExposed>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <!-- setup properties from @api properties in clipboardCopy.js -->
+            <property name="iconName" type="String" />
+            <property name="iconSize" type="String" />
+            <property name="variant" type="String" />
+            <property name="cssClass" type="String" />
+            <property name="content" type="String"  />
+            <property name="label" type="String" />
+            <property name="title" type="String" />
+            <property name="styleOverride" type="String" />
+            <property name="button" type="Boolean" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

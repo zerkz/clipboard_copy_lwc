@@ -1,6 +1,6 @@
 <template>
     <!-- create a "unseen" textarea so we can use a legacy browser API to copy to clipboard. -->
-    <template lwc:if={isIconButton}>
+    <template lwc:if={isButton}>
         <lightning-button-icon style ={_styleOverride} lwc:ref="clipboardButton" class={_cssClass} size={_iconSize}  icon-name={_iconName} tooltip={_title} 
         variant={_variant}  onclick={copyToClipboard}> 
         </lightning-button-icon>

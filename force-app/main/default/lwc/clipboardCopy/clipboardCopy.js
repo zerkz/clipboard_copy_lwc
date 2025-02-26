@@ -35,10 +35,6 @@ export default class ClipboardCopy extends LightningElement {
        }
     }
 
-    get isIconButton() {
-        return this._type === 'icon';
-    }
-
     @api
     set styleOverride(value) {
         this._styleOverride = value;
@@ -46,6 +42,19 @@ export default class ClipboardCopy extends LightningElement {
 
     get styleOverride() {
         return this._styleOverride;
+    }
+
+    @api 
+    set isButton(value) {
+        if (value == true) {
+            this._type = 'button';
+        } else {
+            this._type = 'icon';
+        }
+    }
+
+    get isButton() {
+        return this._type === 'button';
     }
 
 

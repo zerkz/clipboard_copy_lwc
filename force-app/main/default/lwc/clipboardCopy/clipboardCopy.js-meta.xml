@@ -16,6 +16,7 @@
             <property name="cssClass" type="String" />
             <property name="content" type="String"  />
             <property name="label" type="String" />
+            <property name="isButton" type="Boolean" />
             <property name="title" type="String" />
             <property name="styleOverride" type="String" />
             <property name="button" type="Boolean" />
